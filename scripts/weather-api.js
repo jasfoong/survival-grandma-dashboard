@@ -2,14 +2,14 @@
 export let weatherData = [];
 
 // temp in kelvins need to be converted and rounded
-function convertToCelcius(kelvin) {
+export function convertToCelcius(kelvin) {
     const celcius = "°C";
     const converted = Math.round(kelvin - 273.15) + celcius;
     return converted; 
 };
 
 // convert time
-function timeConverter(UNIX_timestamp){
+export function timeConverter(UNIX_timestamp){
     const timestamp = new Date(UNIX_timestamp * 1000);
     const hour = timestamp.getHours();
     const min = timestamp.getMinutes();
@@ -17,8 +17,8 @@ function timeConverter(UNIX_timestamp){
     return time;
   }
 
-function getRandomInRange(from, to) {
-    return (Math.random() * (to - from) + from).toFixed(7) * 1;
+export function getRandomInRange(from, to, fixed) {
+    return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
     // .toFixed() returns string, so ' * 1' is a trick to convert to number
 }
 export async function getWeather() {
@@ -28,9 +28,9 @@ export async function getWeather() {
         // const lon = 100.1140;
 
         // latitude -90 to 90
-        const lat = getRandomInRange(-90, 90);
+        const lat = getRandomInRange(-90, 90, 5);
         // longitude -180 to 180
-        const lon = getRandomInRange(-180, 180);
+        const lon = getRandomInRange(-180, 180, 5);
 
         const baseUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=`;
         const apiKey = "877660ad03b7399dce36c1836b27e0b0";
