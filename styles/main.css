@@ -52,6 +52,10 @@
   font-weight: light;
   font-style: italic;
 }
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -66,16 +70,35 @@ body {
   width: 80%;
   margin: 0 auto;
 }
+.header__first-container {
+  background-color: #bfdee7;
+  height: 50vh;
+  margin-top: 5rem;
+  padding-top: 6rem;
+  text-decoration: none;
+  box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 2.5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .header__info {
   color: #05305c;
   font-size: 2rem;
   text-align: center;
-  background-color: #bfdee7;
-  padding: 1.5rem 2rem;
-  margin-top: 5rem;
+}
+.header__info-subtext {
+  color: #313131;
+  font-size: 1rem;
+  text-align: center;
 }
 .header__second-container {
-  margin: 5rem 0;
+  margin: 8rem 0 1.5rem 0;
   background: #05305c;
   padding: 1.5rem 2rem;
 }

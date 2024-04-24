@@ -7,6 +7,9 @@ $white: #FFF;
 $navy: #05305c;
 $light-blue: #bfdee7;
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -22,17 +25,36 @@ body {
     width: 80%;
     margin: 0 auto;
     
+    &__first-container {
+        background-color: $light-blue;
+        height: 50vh;
+        margin-top: 5rem;
+        padding-top: 6rem;
+        text-decoration: none;
+        box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 2.5s;
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+          }
+        
+    }
+
     &__info {
         color: $navy;
         font-size: 2rem;
         text-align: center;
-        background-color: $light-blue;
-        padding: 1.5rem 2rem;
-        margin-top: 5rem;
+        // text-decoration: none;
+    }
+
+    &__info-subtext {
+        color: $dark-grey;
+        font-size: 1rem;
+        text-align: center;
     }
 
     &__second-container {
-        margin: 5rem 0;
+        margin: 8rem 0 1.5rem 0;
         background: $navy;
         padding: 1.5rem 2rem;
     }
