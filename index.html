@@ -3,34 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Bestie</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Document</title>
 </head>
 <body>
-    <header class="weather-conditions__container">
-        <h1 class=current__conditions>"Current Arctic Conditions"</h1>
-        <h3 class=last__updated>"Last updated'</h3>
+    <header class="header__container">
+        <h2 class="header__info">Are you ready for an adventure?<br>
+        Would you be able to survive here?</h2>
+        <h1 class="header__heading">Current Weather Conditions</h1>
+        <h3 class="header__title">Last updated:</h3>
+        <p class="header__update"></p>
+        <p class="header__description"></p>
     </header>
-    <div class="temperature__container">
-        <h2 class="temperature__current">"temperature"</h2>
-    </div>
-    <div class="feelslike__container">
-        <h2 class=feels__like>"feels like"</h2>
-    </div>
-    <div class="wind__container">
-        <h2 class="wind__speed">"wind"</h2>
-    </div>
-    <div class="sunclouds__container">
-        <h2 class="sunny__cloudy">"sunny/cloudy"</h2>
-    </div>
-    <div class="sunrise__container">
-        <h2 class="sunrise__card">"sunrise"</h2>
-    </div>
-    <div class="sunset__container">
-        <h2 class="sunset__card">"sunset"</h2>
-    </div>
+    <main>
+        <section class="advice__container">
+            <div class="advice__card">
+                <h3 class="advice__title">temperature:</h3>
+                <p class="advice__temp"></p>
+            </div>
+
+            <div class="advice__card">
+                <h3 class="advice__title">feels like:</h3>
+                <p class="advice__feels-like"></p>
+            </div>
+
+            <div class="advice__card">
+                <h3 class="advice__title">wind</h3>
+                <p class="advice__wind"></p>
+            </div>
+
+            <div class="advice__card">
+                <h3 class="advice__title">sunny/cloudy</h3>
+                <p class="advice__cloudy"></p>
+            </div>
+
+            <div class="advice__card">
+                <h3 class="advice__title">sunrise</h3>
+                <p class="advice__sunrise"></p>
+            </div>
+
+            <div class="advice__card">
+                <h3 class="advice__title">sunset</h3>
+                <p class="advice__sunset"></p>
+            </div>
+            
+        </section>
+    </main>
+    <script src="./scripts/main.js" type="module"></script>
 </body>
-<script src="./scripts/weather-api.js" type="module"></script>
 </html>
-
-

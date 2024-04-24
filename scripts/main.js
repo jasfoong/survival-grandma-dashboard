@@ -1,3 +1,12 @@
-import { weatherData } from "./weather-api.js";
+import {
+  convertToCelcius, 
+  timeConverter, 
+  getRandomInRange,
+  getWeather, 
+} from "./weather-api.js";
 
-console.log(weatherData);
+getWeather();
+
+// temp.addEventListener("click", function (event) {
+    
+//   }); 

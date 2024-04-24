@@ -21,6 +21,7 @@ export function getRandomInRange(from, to, fixed) {
     return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
     // .toFixed() returns string, so ' * 1' is a trick to convert to number
 }
+
 export async function getWeather() {
     try {
         // latitude and longitude for the arctic - seperated for possible change of location
@@ -39,23 +40,25 @@ export async function getWeather() {
         console.log(weatherData);
 
         // find elements
-        const lastUpdate = document.querySelector(".dash__update");
-        const description = document.querySelector(".dash__description");
-        const temp = document.querySelector(".dash__temp");
-        const feelsLike = document.querySelector(".dash__feels-like");
-        const cloudy = document.querySelector(".dash__cloudy");
-        const sunrise = document.querySelector(".dash__sunrise");
-        const sunset = document.querySelector(".dash__sunset");
-        const weatherIcon = document.querySelector(".dash__icon");
-        const mapLocation = document.querySelector(".dash__map");
+        const lastUpdate = document.querySelector(".header__update");
+        const description = document.querySelector(".header__description");
+        const temp = document.querySelector(".advice__temp");
+        const feelsLike = document.querySelector(".advice__feels-like");
+        const cloudy = document.querySelector(".advice__cloudy");
+        const wind = document.querySelector(".advice__wind");
+        const sunrise = document.querySelector(".advice__sunrise");
+        const sunset = document.querySelector(".advice__sunset");
+        const weatherIcon = document.querySelector(".advice__icon");
+        const mapLocation = document.querySelector(".advice__map");
 
         // insert data
-        lastUpdate.innerText = `This was last updated at ${Date().toLocaleString()}`;
-        description.innerText = `The weather today will mainly be ${response.data.weather[0].description}`;
+        lastUpdate.innerText = Date().toLocaleString();
+        description.innerText = `The weather here will mainly be ${response.data.weather[0].description}.`;
 
         temp.innerText = convertToCelcius(response.data.main.temp);
         feelsLike.innerText = convertToCelcius(response.data.main.feels_like);
         cloudy.innerText = `The sky is covered with ${response.data.clouds.all}% clouds`;
+        wind.innerText = `The wind speed is ${response.data.wind.speed} m/s`;
 
         sunrise.innerText = timeConverter(response.data.sys.sunrise);
         sunset.innerText = timeConverter(response.data.sys.sunset);
