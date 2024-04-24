@@ -1,0 +1,84 @@
+@use "./typography" as *;
+
+$black: #111;
+$dark-grey: #313131;
+$light-grey: #BBB;
+$white: #FFF;
+$navy: #05305c;
+$light-blue: #bfdee7;
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: url(../assets/images/arctic-bear-background.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: "Playfair Display";
+}
+
+.header {
+    width: 80%;
+    margin: 0 auto;
+    
+    &__info {
+        color: $navy;
+        font-size: 2rem;
+        text-align: center;
+        background-color: $light-blue;
+        padding: 1.5rem 2rem;
+        margin-top: 5rem;
+    }
+
+    &__second-container {
+        margin: 5rem 0;
+        background: $navy;
+        padding: 1.5rem 2rem;
+    }
+
+    &__heading {
+        color: $light-blue;
+        margin-block: 0;
+    }
+
+    &__title,
+    &__update {
+        font-family: "Poppins";
+        font-style: italic;
+        font-weight: light;
+        color: $light-grey;
+        font-size: 0.75rem;
+        display: inline-block;
+    }
+
+    &__description {
+        color: $light-blue;
+        font-weight: light;
+        font-style: italic;
+        font-family: "Poppins";
+    }
+}
+
+.advice {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__card {
+        background-color: $light-blue;
+        border: 1px solid $black;
+        width: 20%;
+        height: 15vw;
+        margin: 1rem;
+        padding: 0 2%;
+    }
+
+    &__title {
+        font-style: italic;
+        font-weight: bold;
+        font-size: 1rem;
+        color: $dark-grey;
+    }
+
+}

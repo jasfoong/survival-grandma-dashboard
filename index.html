@@ -3,13 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Bestie</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-    <h1 class="weather"></h1>
+    <header class="header">
+        <h2 class="header__info">Are you ready for an adventure?<br>
+            Would you be able to survive here?</h2>
+        <div class="header__second-container">
+            <h1 class="header__heading">Current Weather Conditions</h1>
+            <h3 class="header__title">Last updated:</h3>
+            <p class="header__update"></p>
+            <p class="header__description"></p>
+        </div>
+    </header>
+    <main>
+        <section class="advice">
+            <div class="advice__card">
+                <h3 class="advice__title">temperature:</h3>
+                <p class="advice__temp"></p>
+            </div>
+            <div class="advice__card">
+                <h3 class="advice__title">feels like:</h3>
+                <p class="advice__feels-like"></p>
+            </div>
+            <div class="advice__card">
+                <h3 class="advice__title">wind</h3>
+                <p class="advice__wind"></p>
+            </div>
+            <div class="advice__card">
+                <h3 class="advice__title">sunny/cloudy</h3>
+                <p class="advice__cloudy"></p>
+            </div>
+            <div class="advice__card">
+                <h3 class="advice__title">sunrise</h3>
+                <p class="advice__sunrise"></p>
+            </div>
+            <div class="advice__card">
+                <h3 class="advice__title">sunset</h3>
+                <p class="advice__sunset"></p>
+            </div>
+        </section>
+    </main>
+    <script src="./scripts/main.js" type="module"></script>
 </body>
-<script src="./scripts/main.js" type="module"></script>
 </html>
-
-
