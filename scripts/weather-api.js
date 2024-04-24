@@ -4,7 +4,7 @@ export let weatherData = [];
 const kelvinToCelcius = 273.15;
 const celcius = "°C";
 
-async function getWeather() {
+export async function getWeather() {
     try {
         // latitude and longitude for the arctic - seperated for possible change of location
         const lat = 76.2506;
@@ -28,7 +28,7 @@ async function getWeather() {
         // temp in kelvins need to be converted and rounded
         temp.innerText = Math.round(response.data.main.temp - kelvinToCelcius) + celcius;
         feelsLike.innerText = Math.round(response.data.main.feels_like - kelvinToCelcius) + celcius;
-        cloudy.innerText = response.data.clouds.all;
+        cloudy.innerText = `The sky is covered with ${response.data.clouds.all}% clouds`;
 
         // convert dates
         function timeConverter(UNIX_timestamp){
@@ -38,9 +38,11 @@ async function getWeather() {
             const time = hour + ':' + min;
             return time;
           }
+
         sunrise.innerText = timeConverter(response.data.sys.sunrise);
-        sunset.innerText = response.data.sys.sunset;
+        sunset.innerText = timeConverter(response.data.sys.sunset);
         weatherIcon.src = `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`;
+    
     } catch (error) {
         console.error();
     }
