@@ -8,11 +8,15 @@ export function convertToCelcius(kelvin) {
     return converted; 
 };
 
+export function minTwoDigits(n) {
+    return (n < 10 ? '0' : '') + n;
+  };
+
 // convert time
 export function timeConverter(UNIX_timestamp){
     const timestamp = new Date(UNIX_timestamp * 1000);
-    const hour = timestamp.getHours();
-    const min = timestamp.getMinutes();
+    const hour = minTwoDigits(timestamp.getHours());
+    const min = minTwoDigits(timestamp.getMinutes());
     const time = hour + ':' + min;
     return time;
   }
@@ -21,6 +25,18 @@ export function getRandomInRange(from, to, fixed) {
     return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
     // .toFixed() returns string, so ' * 1' is a trick to convert to number
 }
+
+// find elements
+export const lastUpdate = document.querySelector(".header__update");
+export const description = document.querySelector(".header__description");
+export const temp = document.querySelector(".advice__temp");
+export const feelsLike = document.querySelector(".advice__feels-like");
+export const cloudy = document.querySelector(".advice__cloudy");
+export const wind = document.querySelector(".advice__wind");
+export const sunrise = document.querySelector(".advice__sunrise");
+export const sunset = document.querySelector(".advice__sunset");
+export const weatherIcon = document.querySelector(".advice__icon");
+export const mapLocation = document.querySelector(".advice__map");
 
 export async function getWeather() {
     try {
@@ -36,20 +52,9 @@ export async function getWeather() {
         const baseUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=`;
         const apiKey = "877660ad03b7399dce36c1836b27e0b0";
         const response = await axios.get(baseUrl + apiKey);
+        console.log(response);
         weatherData = response.data;
         console.log(weatherData);
-
-        // find elements
-        const lastUpdate = document.querySelector(".header__update");
-        const description = document.querySelector(".header__description");
-        const temp = document.querySelector(".advice__temp");
-        const feelsLike = document.querySelector(".advice__feels-like");
-        const cloudy = document.querySelector(".advice__cloudy");
-        const wind = document.querySelector(".advice__wind");
-        const sunrise = document.querySelector(".advice__sunrise");
-        const sunset = document.querySelector(".advice__sunset");
-        const weatherIcon = document.querySelector(".advice__icon");
-        const mapLocation = document.querySelector(".advice__map");
 
         // insert data
         lastUpdate.innerText = Date().toLocaleString();
@@ -71,4 +76,3 @@ export async function getWeather() {
     }
 };
 
-getWeather();

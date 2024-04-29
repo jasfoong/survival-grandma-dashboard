@@ -7,6 +7,9 @@ $white: #FFF;
 $navy: #05305c;
 $light-blue: #bfdee7;
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -22,17 +25,36 @@ body {
     width: 80%;
     margin: 0 auto;
     
+    &__first-container {
+        background-color: $light-blue;
+        height: 50vh;
+        margin-top: 5rem;
+        padding-top: 6rem;
+        text-decoration: none;
+        box-shadow: 0 4px 4px 1px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 2.5s;
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+          }
+        
+    }
+
     &__info {
         color: $navy;
         font-size: 2rem;
         text-align: center;
-        background-color: $light-blue;
-        padding: 1.5rem 2rem;
-        margin-top: 5rem;
+        // text-decoration: none;
+    }
+
+    &__info-subtext {
+        color: $dark-grey;
+        font-size: 1rem;
+        text-align: center;
     }
 
     &__second-container {
-        margin: 5rem 0;
+        margin: 8rem 0 1.5rem 0;
         background: $navy;
         padding: 1.5rem 2rem;
     }
@@ -64,21 +86,65 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 auto;
+    width: 85%;
+
+    // &__card {
+        // background-color: $light-blue;
+        // border: 1px solid $black;
+        // width: 20%;
+        // height: 15vw;
+        // margin: 1rem;
+        // padding: 0 2%;
+    // }
 
     &__card {
-        background-color: $light-blue;
-        border: 1px solid $black;
-        width: 20%;
+        background-color: transparent;
+        width: 28%;
         height: 15vw;
+        // border: 1px solid $black;
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
         margin: 1rem;
-        padding: 0 2%;
     }
 
-    &__title {
+    &__card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    &__card:hover &__card-inner {
+        transform: rotateY(180deg);
+    }
+        
+    &__card-front,
+    &__card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+    }
+
+    &__card-front {
+        background-color: $light-blue;
+        color: black;   
+    }
+
+    &__card-back {
+        background-color: $navy;
+        color: $light-blue;
+        transform: rotateY(180deg);
+    }
+
+    &__card-back-title {
         font-style: italic;
         font-weight: bold;
         font-size: 1rem;
-        color: $dark-grey;
+        color: $light-grey;
     }
 
 }

@@ -3,52 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survival Bestie</title>
+    <title>Survival Grandma</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
-    <header class="header">
+  <header class="header">
+    <div class="header__first-container"><a class="header__first-container" href="#header__second-container">
         <h2 class="header__info">Are you ready for an adventure?<br>
-            Would you be able to survive here?</h2>
-        <div class="header__second-container">
-            <h1 class="header__heading">Current Weather Conditions</h1>
-            <h3 class="header__title">Last updated:</h3>
-            <p class="header__update"></p>
-            <p class="header__description"></p>
-        </div>
-    </header>
+            Will you survive?<br>
+          What would grandma say?</h2>
+        <h3 class="header__info-subtext">Click to find out</h3>
+    </a></div>
+    <div id="header__second-container" class="header__second-container">
+        <h1 class="header__heading">Current Weather Conditions</h1>
+        <h3 class="header__title">Last updated:</h3>
+        <p class="header__update"></p>
+        <p class="header__description"></p>
+    </div>
+</header>
     <main>
         <section class="advice">
             <div class="advice__card">
-                <h3 class="advice__title">temperature:</h3>
-                <p class="advice__temp"></p>
+                <div class="advice__card-inner">
+                  <div class="advice__card-front">
+                    <h3 class="advice__card-front-temp">Grandma says: <br>"Don't forget to bring a hat dear!"</h3>
+                  </div>
+                  <div class="advice__card-back">
+                    <h3 class="advice__card-back-title">temperature:</h3>
+                    <p class="advice__temp"></p>
+                  </div>
+                </div>
             </div>
+
             <div class="advice__card">
-                <h3 class="advice__title">feels like:</h3>
-                <p class="advice__feels-like"></p>
+                <div class="advice__card-inner">
+                  <div class="advice__card-front">
+                    <h3 class="advice__card-front-feels-like">Grandma says: <br>"Sweetie, a few extra layers won't hurt."</h3>
+                  </div>
+                  <div class="advice__card-back">
+                    <h3 class="advice__card-back-title">feels like:</h3>
+                    <p class="advice__feels-like"></p>
+                  </div>
+                </div>
             </div>
+
             <div class="advice__card">
-                <h3 class="advice__title">wind</h3>
-                <p class="advice__wind"></p>
+                <div class="advice__card-inner">
+                  <div class="advice__card-front">
+                    <h3 class="advice__card-front-wind">Grandma says: <br>"The breeze is a bit strong today, be careful if you're going to the park pumpkin."</h3>
+                  </div>
+                  <div class="advice__card-back">
+                    <h3 class="advice__card-back-title">wind</h3>
+                    <p class="advice__wind"></p>
+                  </div>
+                </div>
             </div>
+
             <div class="advice__card">
-                <h3 class="advice__title">sunny/cloudy</h3>
-                <p class="advice__cloudy"></p>
+                <div class="advice__card-inner">
+                  <div class="advice__card-front">
+                    <h3 class="advice__card-front-cloudy">Grandma says: <br>"I don't think you put on enough sunscreen."</h3>
+                    <img class="advice__icon" src="" />
+                  </div>
+                  <div class="advice__card-back">
+                    <h3 class="advice__card-back-title">sunny/cloudy</h3>
+                    <p class="advice__cloudy"></p>
+                  </div>
+                </div>
             </div>
+
             <div class="advice__card">
-                <h3 class="advice__title">sunrise</h3>
-                <p class="advice__sunrise"></p>
+                <div class="advice__card-inner">
+                  <div class="advice__card-front">
+                    <h3 class="advice__card-front-sunrise">Grandma says: <br>"Early bird catches the worm!"</h3>
+                  </div>
+                  <div class="advice__card-back">
+                    <h3 class="advice__card-back-title">sunrise</h3>
+                    <p class="advice__sunrise"></p>
+                  </div>
+                </div>
             </div>
+
             <div class="advice__card">
-                <h3 class="advice__title">sunset</h3>
-                <p class="advice__sunset"></p>
+                <div class="advice__card-inner">
+                  <div class="advice__card-front">
+                    <h3 class="advice__card-front-sunset">Grandma says: <br>"Try to get home before this time, a late dinner is bad for digestion."</h3>
+                  </div>
+                  <div class="advice__card-back">
+                    <h3 class="advice__card-back-title">sunset</h3>
+                    <p class="advice__sunset"></p>
+                  </div>
+                </div>
             </div>
-            
-            <div class=buttons__container>
-                <button type="button">""</button>
-                <button type="button">""</button>
         </section>
+        <a class="advice__button advice__regenerate" href="./">I want to go somewhere else...</a>
+        <a class="advice__button advice__map" href="">Bye grandma! I am going on an adventure!</a>
     </main>
     <script src="./scripts/main.js" type="module"></script>
 </body>
