@@ -1,0 +1,1 @@
+Produced during a 24-hour hackathon with a team of 3, Survival Grandma integrates a current weather API, location randomizer, and dynamic 'grandma-style' advice. It serves as a quirky, gamified, and human alternative to a weather dashboard. Users can explore other locations or transition seamlessly to the location on Google Maps for further exploration.
